@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import * as React from "react"
 import { useSearchParams } from "next/navigation"
@@ -28,7 +28,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     resolver: zodResolver(userAuthSchema),
   })
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
-  const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false)
+  const [isGoogleLoading, setIsGoogleLoading] = React.useState<boolean>(false)
   const searchParams = useSearchParams()
 
   async function onSubmit(data: FormData) {
@@ -37,7 +37,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     const signInResult = await signIn("email", {
       email: data.email.toLowerCase(),
       redirect: false,
-      callbackUrl: searchParams?.get("from") || "/dashboard",
+      callbackUrl: searchParams?.get("from") || "/",
     })
 
     setIsLoading(false)
@@ -71,7 +71,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               autoCapitalize="none"
               autoComplete="email"
               autoCorrect="off"
-              disabled={isLoading || isGitHubLoading}
+              disabled={isLoading || isGoogleLoading}
               {...register("email")}
             />
             {errors?.email && (
@@ -102,17 +102,17 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         type="button"
         className={cn(buttonVariants({ variant: "outline" }))}
         onClick={() => {
-          setIsGitHubLoading(true)
-          signIn("github")
+          setIsGoogleLoading(true)
+          signIn("google")
         }}
-        disabled={isLoading || isGitHubLoading}
+        disabled={isLoading || isGoogleLoading}
       >
-        {isGitHubLoading ? (
+        {isGoogleLoading ? (
           <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
         ) : (
           <Icons.google className="mr-2 h-4 w-4" />
         )}{" "}
-        Github
+        Google
       </button>
     </div>
   )
