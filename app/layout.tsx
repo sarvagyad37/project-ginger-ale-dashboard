@@ -2,8 +2,8 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { MainNav } from "@/components/main-nav";
 import { siteConfig } from "@/config/site"
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -67,8 +67,9 @@ export default function RootLayout({
           inter.className
         )}
       >
-        <div className="container max-w-7xl mx-auto h-full pt-12">
+        <div>
           {children}
+          <Toaster />
         </div>
       </body>
     </html>
