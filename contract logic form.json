@@ -1,0 +1,115 @@
+// Contract Form Json with template
+
+{
+    "id": "1",
+    "layout": "Personal",
+    "name": "Contract 1",
+    "description": "Contract 1 description",
+
+    "Sender": {
+        "name": "Sender",
+        "fields": [
+            {
+                "name": "Name",
+                "value": "Sender Name"
+            },
+            {
+                "name": "Address",
+                "value": "Sender Address"
+            },
+            {
+                "name": "Phone",
+                "value": "Sender Phone"
+            }
+        ]
+    },
+
+    "Receiver": {
+        "name": "Receiver",
+        "fields": [
+            {
+                "name": "Name",
+                "value": "Receiver Name"
+            },
+            {
+                "name": "Address",
+                "value": "Receiver Address"
+            },
+            {
+                "name": "Phone",
+                "value": "Receiver Phone"
+            }
+        ]
+    },
+
+    "Section": [
+        {
+            "Layout": "Deliverables",
+            "name": "Deliverables",
+            "fields": [
+                {
+                    "name": "Deliverable 1",
+                    "value": "Deliverable 1"
+                },
+                {
+                    "name": "Deliverable 2",
+                    "value": "Deliverable 2"
+                },
+                {
+                    "name": "Deliverable 3",
+                    "value": "Deliverable 3"
+                },
+                {
+                    "name": "Total",
+                    "value": "Total"
+                }
+            ]
+
+        },
+
+        {
+            "Layout": "Payment",
+            "name": "Payment Schedule",
+            "desc": "Payment description",
+            "fields": [
+                {
+                    "name": "Deposit",
+                    "Due": "Due",
+                    "value": "Deposit"
+                },
+                {
+                    "name": "Balance",
+                    "Due": "Due",
+                    "value": "Balance"
+                }
+            ]
+
+        },
+
+        {
+            "Layout": "Terms",
+            "name": "Terms",
+            "fields": [
+                {
+                    "name": "Term 1",
+                    "Desc": "Desc 1",
+                    "isSigned": "false",
+                    "signature": "Signature 1"
+                },
+                {
+                    "name": "Term 2",
+                    "Desc": "Desc 2",
+                    "isSigned": "false",
+                    "signature": "Signature 2"
+                },
+                {
+                    "name": "Term 3",
+                    "Desc": "Desc 3",
+                    "isSigned": "false",
+                    "signature": "Signature 3"
+                }
+            ]
+        }
+
+    ]
+}
